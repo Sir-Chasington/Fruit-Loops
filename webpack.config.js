@@ -28,12 +28,12 @@ module.exports = {
             headers: {
                 name: dev ? 'Fruit Loops (dev)' : 'Fruit Loops',
                 // eslint-disable-next-line quotes
-                version: dev ? `[version]-build.[buildNo]` : `[version]`,
+                version: dev ? '[version]-build.[buildNo]' : '[version]',
                 description: 'Automates PIPS',
                 contributor: 'JSON',
                 downloadURL: dev ? '' : 'https://raw.githubusercontent.com/Sir-Chasington/fruit-loops/master/fruitloops.user.js',
                 updateURL: dev ? '' : 'https://raw.githubusercontent.com/Sir-Chasington/fruit-loops/master/fruitloops.meta.js',
-                match: 'https://www.amazon.com/giveaway/*',
+                match: 'https://fruitlab.com/*',
                 grant: ['GM_setValue', 'GM_getValue', 'GM_notification', 'window.focus'],
                 'run-at': 'document-start',
                 noframes: true,
