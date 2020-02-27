@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name         New Userscript
-// @namespace    http://tampermonkey.net/
-// @version      0.1
+// @name         Fruit Loops
+// @version      0.1.1
 // @description  try to take over the world!
-// @author       You
+// @author       Chester.js
+// @contributor  JSON
+// @updateURL    https://github.com/TyGooch/amazon-giveaway-bot/raw/master/amazonGiveawayBot.user.js
 // @match        https://fruitlab.com*
 // @match        https://fruitlab.com/*
 // @run-at
@@ -14,7 +15,7 @@
     'use strict';
 
     if (!document.getElementById('flat_pips_balance')) {
-        window.location.href = "https://fruitlab.com/ggm";
+        window.location.href = 'https://fruitlab.com/ggm';
         return;
     }
 
@@ -26,7 +27,7 @@
             console.log('balance check');
             var checkPips = document.getElementById('flat_pips_balance').innerText;
             if (pips !== checkPips) {
-                window.location.href = "https://fruitlab.com/ggm";
+                window.location.href = 'https://fruitlab.com/ggm';
             }
         }, 1000);
     }
@@ -42,7 +43,7 @@
     }
 
     if (pathname === '/') {
-        window.location.href = "https://fruitlab.com/ggm";
+        window.location.href = 'https://fruitlab.com/ggm';
     }
 
     if (pathname === '/ggm') {
@@ -52,6 +53,6 @@
     } else if (window.location.href.includes('video')) {
         watchBalance();
     } else {
-        window.location.href = "https://fruitlab.com/ggm";
+        window.location.href = 'https://fruitlab.com/ggm';
     }
 })();
