@@ -1,0 +1,29 @@
+{
+    "name": "fruit-loops",
+    "version": "0.2.0",
+    "description": "Automates PIPS",
+    "main": "src/index.js",
+    "repository": "github:Sir-Chasington/fruit-loops",
+    "author": "Chester.js",
+    "contributors": [
+        "JSON"
+    ],
+    "license": "MIT",
+    "bugs": "https://github.com/Sir-Chasington/fruit-loops/issues",
+    "homepage": "https://github.com/Sir-Chasington/fruit-loops/#readme",
+    "scripts": {
+        "build": "webpack",
+        "dev": "NODE_ENV=development webpack-dev-server"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.1.0",
+        "eslint": "^6.8.0",
+        "eslint-config-airbnb-base": "^14.0.0",
+        "eslint-plugin-import": "^2.20.1",
+        "webpack": "^4.41.6",
+        "webpack-cli": "^3.3.11",
+        "webpack-dev-server": "^3.10.3",
+        "webpack-userscript": "^2.5.1",
+        "yarn": "^1.22.0"
+    }
+}
