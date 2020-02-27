@@ -4,42 +4,46 @@
 // @description  try to take over the world!
 // @author       Chester.js
 // @contributor  JSON
-// @updateURL    https://github.com/TyGooch/amazon-giveaway-bot/raw/master/amazonGiveawayBot.user.js
+// @supportURL   https://github.com/Sir-Chasington/fruit-loops/issues
+// @updateURL    https://raw.githubusercontent.com/Sir-Chasington/fruit-loops/master/fruitloops.js
 // @match        https://fruitlab.com*
 // @match        https://fruitlab.com/*
 // @run-at
 // @grant        none
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
-    if (!document.getElementById('flat_pips_balance')) {
-        window.location.href = 'https://fruitlab.com/ggm';
-        return;
-    }
+    const pips = document.getElementById('flat_pips_balance').innerText;
+    const { pathname } = window.location;
 
-    var pips = document.getElementById('flat_pips_balance').innerText;
-    var pathname = window.location.pathname;
-
-    var watchBalance = () => {
+    const watchBalance = () => {
         setInterval(() => {
-            console.log('balance check');
-            var checkPips = document.getElementById('flat_pips_balance').innerText;
+            const { log } = console;
+            const checkPips = document.getElementById('flat_pips_balance').innerText;
+
+            log('balance check');
+
             if (pips !== checkPips) {
                 window.location.href = 'https://fruitlab.com/ggm';
             }
         }, 1000);
-    }
+    };
 
-    var check = () => {
-        var vid = document.getElementsByClassName('videothumbnail');
-        var randomIndex = Math.floor(Math.random() * vid.length - 1)
-        var baseUrl = window.location.origin;
-        var pathToNew = vid[randomIndex].pathname;
-        var endSearch = vid[randomIndex].search;
+    const check = () => {
+        const vid = document.getElementsByClassName('videothumbnail');
+        const randomIndex = Math.floor(Math.random() * vid.length - 1);
+        const baseUrl = window.location.origin;
+        const pathToNew = vid[randomIndex].pathname;
+        const endSearch = vid[randomIndex].search;
         window.location.href = `${baseUrl}${pathToNew}${endSearch}`;
-        return;
+        return null;
+    };
+
+    if (!document.getElementById('flat_pips_balance')) {
+        window.location.href = 'https://fruitlab.com/ggm';
+        return null;
     }
 
     if (pathname === '/') {
