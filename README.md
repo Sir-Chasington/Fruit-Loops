@@ -18,4 +18,5 @@ Once installed, ensure Tampermonkey is enabled and navigate to [https://www.frui
 ## TODO
 
 - Check for logged in status
+- Add a git hook to `yarn build` prior to commit.
 

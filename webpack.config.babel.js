@@ -35,7 +35,11 @@ export default {
                 contributor: 'JSON',
                 downloadURL: dev ? '' : 'https://raw.githubusercontent.com/Sir-Chasington/fruit-loops/master/fruitloops.user.js',
                 updateURL: dev ? '' : 'https://raw.githubusercontent.com/Sir-Chasington/fruit-loops/master/fruitloops.meta.js',
-                match: 'https://fruitlab.com/*',
+                match: [
+                    'https://fruitlab.com/',
+                    'https://fruitlab.com/ggm',
+                    'https://fruitlab.com/video/*',
+                ],
                 grant: [
                     'GM_setValue',
                     'GM_getValue',

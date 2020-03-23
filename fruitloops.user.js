@@ -5,7 +5,9 @@
 // @description Automates PIPS
 // @homepage    https://github.com/Sir-Chasington/fruit-loops/#readme
 // @supportURL  https://github.com/Sir-Chasington/fruit-loops/issues
-// @match       https://fruitlab.com/*
+// @match       https://fruitlab.com/
+// @match       https://fruitlab.com/ggm
+// @match       https://fruitlab.com/video/*
 // @contributor JSON
 // @downloadURL https://raw.githubusercontent.com/Sir-Chasington/fruit-loops/master/fruitloops.user.js
 // @updateURL   https://raw.githubusercontent.com/Sir-Chasington/fruit-loops/master/fruitloops.meta.js
@@ -114,10 +116,9 @@ __webpack_require__.r(__webpack_exports__);
 // CONCATENATED MODULE: ./src/watchBalance.js
 const watchBalance = (pips) => {
     setInterval(() => {
-        const { log } = console;
         const checkPips = document.getElementById('flat_pips_balance').innerText;
 
-        log('balance check');
+        GM_notification(`Balance check: ${checkPips}`);
 
         if (pips !== checkPips) {
             window.location.href = 'https://fruitlab.com/ggm';
