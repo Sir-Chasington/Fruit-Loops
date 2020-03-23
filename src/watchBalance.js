@@ -1,9 +1,8 @@
 const watchBalance = (pips) => {
     setInterval(() => {
-        const { log } = console;
         const checkPips = document.getElementById('flat_pips_balance').innerText;
 
-        log('balance check');
+        GM_notification(`Balance check: ${checkPips}`);
 
         if (pips !== checkPips) {
             window.location.href = 'https://fruitlab.com/ggm';

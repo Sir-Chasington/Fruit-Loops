@@ -1,1 +1,164 @@
-!function(e){var n={};function t(o){if(n[o])return n[o].exports;var r=n[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,t),r.l=!0,r.exports}t.m=e,t.c=n,t.d=function(e,n,o){t.o(e,n)||Object.defineProperty(e,n,{enumerable:!0,get:o})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,n){if(1&n&&(e=t(e)),8&n)return e;if(4&n&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(t.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&n&&"string"!=typeof e)for(var r in e)t.d(o,r,function(n){return e[n]}.bind(null,r));return o},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},t.p="",t(t.s=0)}([function(e,n,t){"use strict";t.r(n);var o=e=>{setInterval(()=>{const{log:n}=console,t=document.getElementById("flat_pips_balance").innerText;n("balance check"),e!==t&&(window.location.href="https://fruitlab.com/ggm")},1e3)};var r=()=>{const e=document.getElementsByClassName("videothumbnail"),n=Math.floor(Math.random()*e.length-1),t=window.location.origin,o=e[n].pathname,r=e[n].search;return window.location.href=`${t}${o}${r}`,null};const a="https://fruitlab.com/ggm";window.addEventListener("load",async()=>{window.stop(),await async function(){const e=document.getElementById("flat_pips_balance").innerText,{pathname:n}=window.location;return document.getElementById("flat_pips_balance")?("/"===n&&(window.location.href=a),"/ggm"===n?setInterval(()=>{r()},5e3):window.location.href.includes("video")?o(e):window.location.href=a,null):(window.location.href=a,null)}()},{capture:!0,once:!0}),window.addEventListener("unload",async()=>{},!1)}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./src/watchBalance.js
+const watchBalance = (pips) => {
+    setInterval(() => {
+        const checkPips = document.getElementById('flat_pips_balance').innerText;
+
+        GM_notification(`Balance check: ${checkPips}`);
+
+        if (pips !== checkPips) {
+            window.location.href = 'https://fruitlab.com/ggm';
+        }
+    }, 1000);
+};
+
+/* harmony default export */ var src_watchBalance = (watchBalance);
+
+// CONCATENATED MODULE: ./src/check.js
+const check = () => {
+    const vid = document.getElementsByClassName('videothumbnail');
+    const randomIndex = Math.floor(Math.random() * vid.length - 1);
+
+    window.location.href = `${window.location.origin}${vid[randomIndex].pathname}${vid[randomIndex].search}`;
+};
+
+/* harmony default export */ var src_check = (check);
+
+// CONCATENATED MODULE: ./src/index.js
+
+
+
+const url = 'https://fruitlab.com/ggm';
+
+async function setup() {
+    const { pathname } = window.location;
+    const pips = document.getElementById('flat_pips_balance');
+
+    if (!pips || pathname === '/') {
+        window.location.href = url;
+    }
+
+    if (pathname === '/ggm') {
+        setInterval(() => {
+            src_check();
+        }, 5000);
+    } else if (window.location.href.includes('video')) {
+        src_watchBalance(pips.innerText);
+    } else {
+        window.location.href = url;
+    }
+}
+
+window.addEventListener(
+    'load',
+    async () => {
+        window.stop();
+        await setup();
+    },
+    { capture: true, once: true },
+);
+
+window.addEventListener(
+    'unload',
+    async () => {
+        // do some clean up?
+    },
+    false,
+);
+
+
+/***/ })
+/******/ ]);
