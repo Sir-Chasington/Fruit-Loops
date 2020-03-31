@@ -3,6 +3,9 @@
     "parser": "babel-eslint",
     "globals": {
         "document": true,
+        "GM_getValue": true,
+        "GM_setValue": true,
+        "GM_notification": true,
         "window": true
     },
     "rules": {
