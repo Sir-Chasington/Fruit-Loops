@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Fruit Loops
-// @version     0.2.1
+// @version     0.2.2
 // @author      Chester.js
 // @description Automates PIPS
 // @homepage    https://github.com/Sir-Chasington/fruit-loops/#readme
@@ -118,9 +118,16 @@ const watchBalance = (pips) => {
     setInterval(() => {
         const checkPips = document.getElementById('flat_pips_balance').innerText;
 
-        GM_notification(`Balance check: ${checkPips}`);
-
         if (pips !== checkPips) {
+            const date = new Date();
+            const options = {
+                hour12: true,
+                hour: '2-digit',
+                minute: '2-digit',
+            };
+
+            GM_notification(`${date.toLocaleTimeString([], options)} Balance: ${checkPips}`);
+
             window.location.href = 'https://fruitlab.com/ggm';
         }
     }, 1000);
@@ -145,21 +152,22 @@ const check = () => {
 const url = 'https://fruitlab.com/ggm';
 
 async function setup() {
+    let { href } = window.location;
     const { pathname } = window.location;
     const pips = document.getElementById('flat_pips_balance');
 
     if (!pips || pathname === '/') {
-        window.location.href = url;
+        href = url;
     }
 
     if (pathname === '/ggm') {
         setInterval(() => {
             src_check();
         }, 5000);
-    } else if (window.location.href.includes('video')) {
+    } else if (href.includes('video')) {
         src_watchBalance(pips.innerText);
     } else {
-        window.location.href = url;
+        href = url;
     }
 }
 

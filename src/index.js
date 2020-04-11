@@ -4,21 +4,22 @@ import check from './check';
 const url = 'https://fruitlab.com/ggm';
 
 async function setup() {
+    let { href } = window.location;
     const { pathname } = window.location;
     const pips = document.getElementById('flat_pips_balance');
 
     if (!pips || pathname === '/') {
-        window.location.href = url;
+        href = url;
     }
 
     if (pathname === '/ggm') {
         setInterval(() => {
             check();
         }, 5000);
-    } else if (window.location.href.includes('video')) {
+    } else if (href.includes('video')) {
         watchBalance(pips.innerText);
     } else {
-        window.location.href = url;
+        href = url;
     }
 }
 
