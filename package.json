@@ -1,6 +1,6 @@
 {
     "name": "fruit-loops",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "Automates PIPS",
     "main": "src/index.js",
     "repository": "github:Sir-Chasington/fruit-loops",
@@ -15,6 +15,7 @@
         "build": "webpack",
         "dev": "NODE_ENV=development webpack-dev-server"
     },
+    "pre-commit": "build",
     "devDependencies": {
         "@babel/core": "^7.9.0",
         "@babel/preset-env": "^7.9.5",
@@ -23,6 +24,7 @@
         "eslint": "^6.8.0",
         "eslint-config-airbnb-base": "^14.1.0",
         "eslint-plugin-import": "^2.20.2",
+        "pre-commit": "^1.2.2",
         "webpack": "^4.42.1",
         "webpack-cli": "^3.3.11",
         "webpack-dev-server": "^3.10.3",
