@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Fruit Loops
-// @version     0.2.1
+// @version     0.2.2
 // @author      Chester.js
 // @description Automates PIPS
 // @homepage    https://github.com/Sir-Chasington/fruit-loops/#readme
