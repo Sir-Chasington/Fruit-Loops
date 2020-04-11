@@ -12,10 +12,11 @@
     "bugs": "https://github.com/Sir-Chasington/fruit-loops/issues",
     "homepage": "https://github.com/Sir-Chasington/fruit-loops/#readme",
     "scripts": {
+        "add": "git add .",
         "build": "webpack",
         "dev": "NODE_ENV=development webpack-dev-server"
     },
-    "pre-commit": "build",
+    "pre-commit": [ "build", "add" ],
     "devDependencies": {
         "@babel/core": "^7.9.0",
         "@babel/preset-env": "^7.9.5",
