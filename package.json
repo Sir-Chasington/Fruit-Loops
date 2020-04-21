@@ -1,6 +1,6 @@
 {
     "name": "fruit-loops",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "description": "Automates PIPS",
     "main": "src/index.js",
     "repository": "github:Sir-Chasington/fruit-loops",

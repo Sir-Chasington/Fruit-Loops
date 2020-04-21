@@ -119,7 +119,12 @@ const check = () => {
     const vid = document.getElementsByClassName('videothumbnail');
     const randomIndex = Math.floor(Math.random() * vid.length - 1);
 
-    window.location.href = `${window.location.origin}${vid[randomIndex].pathname}${vid[randomIndex].search}`;
+    // check if a blank videos page, reload if false
+    if (document.querySelectorAll('#ggm_videos ul li').length >= 1) {
+        window.location.href = `${window.location.origin}${vid[randomIndex].pathname}${vid[randomIndex].search}`;
+    } else {
+        window.location.reload();
+    }
 };
 
 /* harmony default export */ var src_check = (check);
@@ -131,22 +136,26 @@ const check = () => {
 const url = 'https://fruitlab.com/ggm';
 
 async function setup() {
-    let { href } = window.location;
     const { pathname } = window.location;
     const pips = document.getElementById('flat_pips_balance');
 
     if (!pips || pathname === '/') {
-        href = url;
+        window.location.href = url;
     }
 
     if (pathname === '/ggm') {
+        // check if a blank videos page, reload if true
+        if (document.getElementById('ggm_videos').getElementsByTagName('li').length >= 1) {
+            window.location.href = url;
+        }
+
         setInterval(() => {
             src_check();
         }, 5000);
-    } else if (href.includes('video')) {
+    } else if (window.location.href.includes('video')) {
         src_watchBalance(pips.innerText);
     } else {
-        href = url;
+        window.location.href = url;
     }
 }
 

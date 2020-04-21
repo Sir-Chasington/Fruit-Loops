@@ -4,22 +4,26 @@ import check from './check';
 const url = 'https://fruitlab.com/ggm';
 
 async function setup() {
-    let { href } = window.location;
     const { pathname } = window.location;
     const pips = document.getElementById('flat_pips_balance');
 
     if (!pips || pathname === '/') {
-        href = url;
+        window.location.href = url;
     }
 
     if (pathname === '/ggm') {
+        // check if a blank videos page, reload if true
+        if (document.getElementById('ggm_videos').getElementsByTagName('li').length >= 1) {
+            window.location.href = url;
+        }
+
         setInterval(() => {
             check();
         }, 5000);
-    } else if (href.includes('video')) {
+    } else if (window.location.href.includes('video')) {
         watchBalance(pips.innerText);
     } else {
-        href = url;
+        window.location.href = url;
     }
 }
 
