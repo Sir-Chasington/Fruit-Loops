@@ -16,7 +16,10 @@
         "build": "webpack",
         "dev": "NODE_ENV=development webpack-dev-server"
     },
-    "pre-commit": [ "build", "add" ],
+    "pre-commit": [
+        "build",
+        "add"
+    ],
     "devDependencies": {
         "@babel/core": "^7.10.2",
         "@babel/preset-env": "^7.10.2",
