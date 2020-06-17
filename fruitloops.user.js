@@ -16,7 +16,7 @@
 // @grant       GM_notification
 // @grant       window.focus
 // @run-at      document-start
-// @noframes    true
+// @noframes    
 // ==/UserScript==
 
 /******/ (function(modules) { // webpackBootstrap
