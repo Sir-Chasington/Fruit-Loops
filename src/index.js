@@ -12,6 +12,11 @@ async function setup() {
     }
 
     if (pathname === '/ggm') {
+        // check if a blank videos page, reload if true
+        if (document.getElementById('ggm_videos').getElementsByTagName('li').length >= 1) {
+            window.location.href = url;
+        }
+
         setInterval(() => {
             check();
         }, 5000);

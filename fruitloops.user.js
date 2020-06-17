@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Fruit Loops
-// @version     0.2.1
+// @version     0.2.4
 // @author      Chester.js
 // @description Automates PIPS
 // @homepage    https://github.com/Sir-Chasington/fruit-loops/#readme
@@ -118,9 +118,16 @@ const watchBalance = (pips) => {
     setInterval(() => {
         const checkPips = document.getElementById('flat_pips_balance').innerText;
 
-        GM_notification(`Balance check: ${checkPips}`);
-
         if (pips !== checkPips) {
+            const date = new Date();
+            const options = {
+                hour12: true,
+                hour: '2-digit',
+                minute: '2-digit',
+            };
+
+            GM_notification(`${date.toLocaleTimeString([], options)} Balance: ${checkPips}`);
+
             window.location.href = 'https://fruitlab.com/ggm';
         }
     }, 1000);
@@ -133,7 +140,12 @@ const check = () => {
     const vid = document.getElementsByClassName('videothumbnail');
     const randomIndex = Math.floor(Math.random() * vid.length - 1);
 
-    window.location.href = `${window.location.origin}${vid[randomIndex].pathname}${vid[randomIndex].search}`;
+    // check if a blank videos page, reload if false
+    if (document.querySelectorAll('#ggm_videos ul li').length >= 1) {
+        window.location.href = `${window.location.origin}${vid[randomIndex].pathname}${vid[randomIndex].search}`;
+    } else {
+        window.location.reload();
+    }
 };
 
 /* harmony default export */ var src_check = (check);
@@ -153,6 +165,11 @@ async function setup() {
     }
 
     if (pathname === '/ggm') {
+        // check if a blank videos page, reload if true
+        if (document.getElementById('ggm_videos').getElementsByTagName('li').length >= 1) {
+            window.location.href = url;
+        }
+
         setInterval(() => {
             src_check();
         }, 5000);
