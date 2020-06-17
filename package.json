@@ -1,6 +1,10 @@
 {
     "name": "fruit-loops",
+<<<<<<< HEAD
     "version": "0.2.5",
+=======
+    "version": "0.2.4",
+>>>>>>> 5681c5a89c65c5a8cbcb13d4f732194f1fc35c81
     "description": "Automates PIPS",
     "main": "src/index.js",
     "repository": "github:Sir-Chasington/fruit-loops",
@@ -12,9 +16,11 @@
     "bugs": "https://github.com/Sir-Chasington/fruit-loops/issues",
     "homepage": "https://github.com/Sir-Chasington/fruit-loops/#readme",
     "scripts": {
+        "add": "git add .",
         "build": "webpack",
         "dev": "NODE_ENV=development webpack-dev-server"
     },
+    "pre-commit": [ "build", "add" ],
     "devDependencies": {
         "@babel/core": "^7.10.2",
         "@babel/preset-env": "^7.10.2",
